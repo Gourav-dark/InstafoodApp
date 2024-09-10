@@ -1,0 +1,119 @@
+﻿@page "/address-delivery/{Id}"
+@attribute [Authorize(Roles = "Customer")]
+@inject NavigationManager _nav
+@rendermode @(new InteractiveServerRenderMode(prerender:false))
+@inject IAddressService _addressService
+@inject IOrderService _orderService
+
+<PageTitle>Delivery-Address</PageTitle>
+<div class="px-2 w-100">
+    <div class="col-lg-6 offset-lg-3 pt-4 pb-4 border rounded shadow-sm">
+        <EditForm Model="@deliveryModel" OnValidSubmit="AddressUpdate" FormName="DeliveryForm">
+            <DataAnnotationsValidator />
+            <div class="mb-3 text-center">
+                <h3>Address Detail</h3>
+            </div>
+            <div class="row px-2 mb-2">
+                <div class="col">
+                    <label class="ms-2">Name</label>
+                    <InputText @bind-Value="Name" class="form-control" readonly />
+                </div>
+                <div class="col">
+                    <label class="ms-2">Email</label>
+                    <InputText @bind-Value="Email" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row px-2 mb-2">
+                <div class="col">
+                    <label class="ms-2">Phone*</label>
+                    <InputText @bind-Value="deliveryModel.Phone" class="form-control" placeholder="Enter the Phone" />
+                    <ValidationMessage For="()=>deliveryModel.Phone" />
+                </div>
+                <div class="col">
+                    <label class="ms-2">Street*</label>
+                    <InputText @bind-Value="deliveryModel.Street" class="form-control" placeholder="Enter the Street" />
+                    <ValidationMessage For="()=>deliveryModel.Street" />
+                </div>
+            </div>
+            <div class="row px-2 mb-2">
+                <div class="col">
+                    <label class="ms-2">LandMark</label>
+                    <InputText @bind-Value="deliveryModel.LandMark" class="form-control" placeholder="Enter the LandMark" />
+                    <ValidationMessage For="()=>deliveryModel.LandMark" />
+                </div>
+                <div class="col">
+                    <label class="ms-2">City*</label>
+                    <InputText @bind-Value="deliveryModel.City" class="form-control" placeholder="Enter the City" />
+                    <ValidationMessage For="()=>deliveryModel.City" />
+                </div>
+            </div>
+            <div class="mb-3 mx-2">
+                <label class="ms-2">State*</label>
+                <InputText @bind-Value="deliveryModel.State" class="form-control" placeholder="Enter the State" />
+                <ValidationMessage For="()=>deliveryModel.State" />
+            </div>
+            <div class="mb-3 mx-2">
+                <label class="ms-2">Postal Code*</label>
+                <InputText @bind-Value="deliveryModel.PostalCode" class="form-control" placeholder="Enter the Postal Code" />
+                <ValidationMessage For="()=>deliveryModel.PostalCode" />
+            </div>
+            <div class="mb-3 mt-3 d-grid gap-2">
+                <button type="submit" class="mx-2 btn btn-primary">Checkout</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    [Parameter]
+    public string? Id { get; set; }
+    private string? Name;
+    private string? Email;
+    private string? UserId;
+    private bool IsAddress=false;
+
+    DeliveryAddressDTO deliveryModel { get; set; } = new DeliveryAddressDTO();
+    private string? message;
+    private async Task AddressUpdate()
+    {
+        if (Id.Equals(UserId))
+        {
+            // Your update logic her
+            deliveryModel.CustomerId = Id;
+            if (IsAddress)
+            {
+                _addressService.Update(deliveryModel);
+            }
+            else
+            {
+                _addressService.Set(deliveryModel);
+            }
+            //Order Code
+            await _orderService.PlaceOrder(UserId);
+            _nav.NavigateTo($"/orders/{Id}");
+        }
+        return;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        Name = user.Identity.Name;
+        Email = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+        UserId = user.FindFirst("userId")?.Value;
+        DeliveryAddress obj = await _addressService.GetById(UserId);
+        if(obj != null)
+        {
+            deliveryModel.Street = obj.Street;
+            deliveryModel.LandMark = obj.LandMark;
+            deliveryModel.Phone = obj.Phone;
+            deliveryModel.State = obj.State;
+            deliveryModel.CustomerId = obj.CustomerId;
+            deliveryModel.City = obj.City;
+            deliveryModel.PostalCode = obj.PostalCode;
+            IsAddress = true;
+        }
+    }
+}

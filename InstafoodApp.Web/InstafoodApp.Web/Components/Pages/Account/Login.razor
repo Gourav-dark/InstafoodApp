@@ -1,0 +1,66 @@
+﻿@page "/login"
+
+@inject NavigationManager _nav
+@inject IUserService _userService
+<PageTitle>Login</PageTitle>
+
+<div class="mt-5 px-2 w-100">
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border rounded">
+        <EditForm Model="@loginModel" OnValidSubmit="LoginAuthenticate" FormName="LoginForm">
+            <DataAnnotationsValidator />
+            <div class="mb-3 text-center flex-column">
+                <img src="/images/profilelogin.png" style="max-height:10rem" />
+                <h3>LOGIN</h3>
+            </div>
+            <div class="mb-3 mx-2">
+                <label class="ms-2">Email</label>
+                <InputText @bind-Value="loginModel.Email" class="form-control" placeholder="Enter the Email" />
+                <ValidationMessage For="()=>loginModel.Email" />
+            </div>
+            <div class="mb-3 mx-2">
+                <label class="ms-2">Password</label>
+                <InputText type="password" @bind-Value="loginModel.Password" class="form-control" placeholder="Enter the Password" />
+                <ValidationMessage For="()=>loginModel.Password" />
+            </div>
+            <div class="mb-3 text-center">
+                <span class="text-danger">@errorMessage</span>
+            </div>
+            <div class="mb-3 mt-3 d-grid gap-2">
+                <button type="submit" class="mx-2 btn btn-primary">Login</button>
+            </div>
+        </EditForm>
+        <div class="text-center">
+            Don't have an account? <a class="text-primary" href="/signup">Sign up</a>
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public HttpContext _httpContext { get; set; }
+    [SupplyParameterFromForm]
+    public LoginDTO loginModel { get; set; } = new();
+    public string? errorMessage;
+
+    private async Task LoginAuthenticate()
+    {
+        LoginResponse response = await _userService.Login(loginModel);
+        if (response == null)
+        {
+            errorMessage = "Incorrect email or password";
+            return;
+        }
+        // errorMessage = response.message;
+        var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Email,loginModel.Email),
+                new Claim(ClaimTypes.Name,response.name),
+                new Claim(ClaimTypes.Role,response.role),
+                new Claim("userId",response.userId),
+            };
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+        await _httpContext.SignInAsync(principal);
+        _nav.NavigateTo("/");
+    }
+}

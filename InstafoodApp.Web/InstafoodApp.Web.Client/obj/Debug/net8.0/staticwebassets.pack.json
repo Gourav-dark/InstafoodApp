@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\obj\\Debug\\net8.0\\compressed\\w99jphqud3.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\Images\\empty-cart.png",
+      "PackagePath": "staticwebassets\\Images\\empty-cart.png"
+    },
+    {
+      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\Images\\profilelogin.png",
+      "PackagePath": "staticwebassets\\Images\\profilelogin.png"
+    },
+    {
+      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.InstafoodApp.Web.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.InstafoodApp.Web.Client.props",
+      "PackagePath": "build\\InstafoodApp.Web.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.InstafoodApp.Web.Client.props",
+      "PackagePath": "buildMultiTargeting\\InstafoodApp.Web.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.InstafoodApp.Web.Client.props",
+      "PackagePath": "buildTransitive\\InstafoodApp.Web.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

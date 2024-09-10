@@ -1,0 +1,14 @@
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\bin\Debug\net8.0\InstafoodApp.DataAccess.deps.json
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\bin\Debug\net8.0\InstafoodApp.DataAccess.runtimeconfig.json
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\bin\Debug\net8.0\InstafoodApp.DataAccess.dll
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\bin\Debug\net8.0\InstafoodApp.DataAccess.pdb
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.csproj.AssemblyReference.cache
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.AssemblyInfoInputs.cache
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.AssemblyInfo.cs
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.dll
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\refint\InstafoodApp.DataAccess.dll
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.pdb
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.genruntimeconfig.cache
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\ref\InstafoodApp.DataAccess.dll

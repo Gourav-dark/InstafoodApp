@@ -1,0 +1,134 @@
+﻿@page "/"
+@inject IProductService _productService
+@inject ICartService _cartService
+@inject NavigationManager _nav
+@rendermode @(new InteractiveServerRenderMode(prerender:false))
+
+<PageTitle>Home</PageTitle>
+<div class="w-100">
+    <div class="w-100 mb-1 p-2 sticky-top bg-white border-bottom border-dark d-flex justify-content-end">
+        <div class="rounded d-flex align-items-center w-50">
+            <input type="text" @bind="searchQuery" placeholder="Search..." class="form-control me-2 py-1" @onkeypress="HandleKeyPress" />
+            <button @onclick="Search" class="btn btn-primary py-1">Search</button>
+        </div>
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+                <button class="btn btn-success py-1 mx-2" @onclick="Addproduct">Add Product</button>
+            </Authorized>
+        </AuthorizeView>
+    </div>
+    @if (showSuccessAlert)
+    {
+        <div class="alert-success p-2 rounded d-flex align-items-center justify-content-between me-3 position-fixed end-0 border border-success" style="height:2.2rem; width:18rem; z-index:3000;">
+            <span>Item added to cart successfully!</span>
+            <button type="button" class="btn-close" @onclick="() => showSuccessAlert = false" aria-label="Close"></button>
+        </div>
+    }
+    <div class="row px-2">
+        @if (filteredProducts != null)
+        {
+            @foreach (var product in filteredProducts)
+            {
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="@product.ProductPicture" alt="Card image cap" height="200rem">
+                        <div class="card-body pb-1">
+                            <h5 class="card-title text-primary">@product.ProductName</h5>
+                            <p class="card-text text-secondary mb-0" style="font-size:1rem">@product.ProductDescription</p>
+                            <p class="card-text text-danger text-end">Rs. @((product.UnitPrice).ToString("F2"))</p>
+                        </div>
+                        <AuthorizeView Roles="Admin">
+                            <NotAuthorized>
+                                <div class="card-footer py-1 d-flex justify-content-around">
+                                    <button class="btn btn-primary" @onclick="@(() => AddCart(product.ProductId))">Add To Cart</button>
+                                    <button class="btn btn-success" @onclick="@(() => BuyNow(product.ProductId))">Buy now</button>
+                                </div>
+                            </NotAuthorized>
+                        </AuthorizeView>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Loading.....</p>
+        }
+    </div>
+</div>
+
+@code {
+    private string? searchQuery;
+    private IEnumerable<Product>? products;
+    private IEnumerable<Product>? filteredProducts;
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+    private string? userId;
+    private bool showSuccessAlert = false;
+
+    private async Task AddCart(int productId)
+    {
+        showSuccessAlert = false;
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        if (!(user.Identity?.IsAuthenticated ?? false))
+        {
+            _nav.NavigateTo("/login");
+            return;
+        }
+        CartItemDTO itemDTO = new()
+            {
+                CustomerId = userId,
+                ProductId = productId,
+                Quantity = 1
+            };
+        await _cartService.AddCartItem(itemDTO);
+        showSuccessAlert = true;
+    }
+
+    private async Task BuyNow(int productId)
+    {
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        if (!(user.Identity?.IsAuthenticated ?? false))
+        {
+            _nav.NavigateTo("/login");
+            return;
+        }
+        await AddCart(productId);
+        _nav.NavigateTo($"/cart/{userId}");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+        var authState = await authenticationStateTask;
+        var user = authState.User;
+        userId = user.FindFirst("userId")?.Value;
+        products = await _productService.GetAll();
+        filteredProducts = products;
+    }
+
+    private void Search()
+    {
+        if (!string.IsNullOrEmpty(searchQuery))
+        {
+            filteredProducts = products.Where(x => x.ProductName.ToLower().Contains(searchQuery.ToLower()));
+        }
+        else
+        {
+            filteredProducts = products;
+        }
+    }
+
+    private void HandleKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            Search();
+        }
+    }
+    private void Addproduct()
+    {
+        _nav.NavigateTo("/add-product");
+    }
+}

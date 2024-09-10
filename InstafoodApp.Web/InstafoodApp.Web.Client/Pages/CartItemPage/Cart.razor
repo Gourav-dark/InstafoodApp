@@ -1,0 +1,115 @@
+﻿@page "/cart/{Id}"
+@rendermode @(new InteractiveServerRenderMode(prerender:false))
+@inject NavigationManager _nav
+@attribute [Authorize(Roles = "Customer")]
+@inject ICartService _cartService
+<PageTitle>Cart</PageTitle>
+<div class="w-100 px-3 mt-3">
+    @if (items == null)
+    {
+        <div class="text-center my-5">
+            <img src="/images/empty-cart.png" alt="Empty Cart" style="max-height: 200px;" />
+            <h3 class="mt-3">Your Cart is Empty</h3>
+            <p class="text-muted">Looks like you haven't added anything to your cart yet.</p>
+            <button class="btn btn-primary mt-3" @onclick="ContinueShopping">Continue Shopping</button>
+        </div>
+    }
+    else
+    {
+        @foreach (CartItem item in items)
+        {
+            <div class="row border rounded p-2">
+                <div class="col-3 d-flex align-items-center justify-content-center" style="width: 100px;">
+                    <img class="rounded" style="width: 100px; height: 100px; object-fit: cover;" src="@item.Product.ProductPicture" />
+                </div>
+                <div class="col-6">
+                    <h5>@item.Product.ProductName</h5>
+                    <p style="font-size:.8rem">@item.Product.ProductDescription</p>
+                    <button class="btn btn-danger px-2 py-0" @onclick="()=>DeleteItem(item.ProductId)">Delete</button>
+                </div>
+                <div class="col-2 d-flex align-items-center">
+                    <button class="btn btn-danger p-1" @onclick="() => UpdateQuantity(item.ProductId, item.Quantity - 1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+                        </svg>
+                    </button>
+                    <div class="mx-2 font-weight-bold">@(item.Quantity.ToString("D2"))</div>
+                    <button class="btn btn-success p-1" @onclick="() => UpdateQuantity(item.ProductId, item.Quantity + 1)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="col d-flex align-items-center justify-content-around" style="width: 200px;">
+                    <h6 class="text-danger fs-6">Rs. @item.Product.UnitPrice x @item.Quantity</h6>
+                    <h5 class="text-success px-2">@((item.Product.UnitPrice * item.Quantity).ToString("F2"))</h5>
+                </div>
+            </div>
+        }
+        <div class="row border rounded py-1">
+            <div class="col d-flex justify-content-between">
+                <div class="fs-5">
+                    Total Cost = @(TotalCost.ToString("F2"))
+                </div>
+                <div>
+                    <button class="btn btn-primary py-1" @onclick="PlaceOrder">Place Order</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private IEnumerable<CartItem>? items;
+    [Parameter]
+    public string? Id { get; set; }
+    private string? messageResponse;
+    private float TotalCost=0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = await _cartService.GetByCustomerId(Id);
+        if (items != null)
+        {
+            foreach(var item in items)
+            {
+                TotalCost += item.Quantity * item.Product.UnitPrice;
+            }
+        }
+    }
+
+    private async Task UpdateQuantity(int productId, int newQuantity)
+    {
+        if (newQuantity < 1) return;
+        CartItemDTO obj = new()
+            {
+                ProductId = productId,
+                CustomerId = Id,
+                Quantity = newQuantity
+            };
+        messageResponse = await _cartService.UpdateCartItem(obj);
+        await RefreshCartItems();
+    }
+
+    private async Task DeleteItem(int productId)
+    {
+        messageResponse = await _cartService.DeleteCartItem(Id, productId);
+        await RefreshCartItems();
+    }
+
+    private async Task RefreshCartItems()
+    {
+        items = await _cartService.GetByCustomerId(Id);
+        await InvokeAsync(StateHasChanged);
+    }
+    private void ContinueShopping()
+    {
+        _nav.NavigateTo("/");
+    }
+    private void PlaceOrder()
+    {
+        _nav.NavigateTo($"/address-delivery/{Id}");
+    }
+}

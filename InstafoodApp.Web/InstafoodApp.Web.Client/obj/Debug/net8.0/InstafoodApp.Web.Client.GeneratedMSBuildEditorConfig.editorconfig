@@ -1,0 +1,67 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = InstafoodApp.Web.Client
+build_property.RootNamespace = InstafoodApp.Web.Client
+build_property.ProjectDir = C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/Account/AccessDenied.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/Account/Address.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBZGRyZXNzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/CartItemPage/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydEl0ZW1QYWdlXENhcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/OrderPage/OrderDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJQYWdlXE9yZGVyRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/OrderPage/OrdersAdmin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJQYWdlXE9yZGVyc0FkbWluLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/OrderPage/OrdersCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJQYWdlXE9yZGVyc0N1c3RvbWVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Pages/ProductPage/AddProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdFBhZ2VcQWRkUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Shared/HeaderComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEhlYWRlckNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Shared/NewComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5ld0NvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

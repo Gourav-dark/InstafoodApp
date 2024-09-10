@@ -1,0 +1,78 @@
+﻿@page "/orders/{Id}"
+@rendermode @(new InteractiveServerRenderMode(prerender:false))
+@inject NavigationManager _nav
+@attribute [Authorize(Roles = "Customer")]
+@inject IOrderService _orderService
+<PageTitle>Orders</PageTitle>
+
+<div class="w-100 px-2 row">
+    @if (items == null)
+    {
+        <div class="text-center my-5">
+            <img src="/images/empty-cart.png" alt="Empty Cart" style="max-height: 200px;" />
+            <h3 class="mt-3">No Order Found</h3>
+            <p class="text-muted">Looks like you haven't ordered anything</p>
+            <button class="btn btn-primary mt-3" @onclick="ContinueShopping">Continue Shopping</button>
+        </div>
+    }
+    else
+    {
+        @foreach (Order item in items)
+        {
+            <div class="border rounded p-2">
+                <div class="d-flex justify-content-between align-items-center bg-secondary text-white rounded p-2">
+                    <span class="">Order ID: @item.OrderId</span>
+                    <span class="badge bg-warning text-dark px-2 border rounded">@item.OrderStatus.Status</span>
+                </div>
+                <div class="mt-2 px-3">
+                    <p class="small mb-1"><strong>Order Time:</strong> @item.OrderTime.ToString("hh:mm tt") @item.OrderDate</p>
+                </div>
+                <OrderDetails OrderId="@item.OrderId" ></OrderDetails>
+                <div class="d-flex justify-content-end px-4 pt-2">
+                    <p class="small"><strong>Total Cost:</strong> @item.TotalCost.ToString("F2")</p>
+                </div>
+                @if (!item.OrderStatus.Status.Equals("Cancelled") &&
+               !item.OrderStatus.Status.Equals("Out for Delivery") &&
+               !item.OrderStatus.Status.Equals("Declined"))
+                {
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-danger py-1" @onclick="() => cancelOrder(item.OrderId)">Cancel Order</button>
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private IEnumerable<Order>? items;
+    [Parameter]
+    public string? Id { get; set; }
+    private string? messageResponse;
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = await _orderService.GetOrderByUserId(Id);
+        if(items != null)
+        {
+            items = items.OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
+        }
+    }
+
+    private async Task cancelOrder(string orderId)
+    {
+        await _orderService.UpdateOrderStatus(orderId, "Cancelled");
+        await RefreshCartItems();
+    }
+
+    private async Task RefreshCartItems()
+    {
+        items = await _orderService.GetOrderByUserId(Id);
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private void ContinueShopping()
+    {
+        _nav.NavigateTo("/");
+    }
+}

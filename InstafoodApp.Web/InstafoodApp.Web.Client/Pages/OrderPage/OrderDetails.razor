@@ -1,0 +1,34 @@
+﻿@inject IOrderService _orderService
+
+@if (orderDetails != null)
+{
+    @foreach (OrderDetail detail in orderDetails)
+    {
+        <div class="d-flex justify-content-between border-bottom mx-4 small">
+            <span class="">@detail.Product.ProductName</span>
+            <div class="d-flex justify-content-center gap-2">
+                <span class="">@detail.Product.UnitPrice.ToString("F2")</span>
+                <span> X </span>
+                <span>@detail.Quantity.ToString("D2")</span>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>Loading...</p>
+}
+
+@code {
+    [Parameter]
+    public string? OrderId { get; set; }
+    private IEnumerable<OrderDetail>? orderDetails;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (OrderId != null)
+        {
+            orderDetails = await _orderService.GetOrderDetails(OrderId);
+        }
+    }
+}
