@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "InstafoodApp.Web.Client",
   "resources": {
-    "hash": "sha256-u2XFNZ8HEDAQ0JZr95nlGtOqO8lQb99Ueuo/d6rr9gI=",
+    "hash": "sha256-nabMcjVtmUsQRxJP1Hp3liNl0xT5i29oqAfLwaWaX4c=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.e1adpwenhd.js": "sha256-tFsxPBbhkdn6GKNBKvCRLzrfAHdyM86odYTe0MtrwMk="
     },
@@ -19,6 +19,7 @@
     "assembly": {
       "Azure.Core.wasm": "sha256-cQyh2VXLObWcWT4DMebhILyvQTQYLQG0wN7/OwDJX5g=",
       "Azure.Identity.wasm": "sha256-Z4d2gC7rBBgpCvtxUFKuedytnRnWY92gC2dLlsuh+xQ=",
+      "BlazorBootstrap.wasm": "sha256-+jeQHjqZsB2T7+hDAnW2nNVPF+WG1FXmZK6+DEt+gbA=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-H1yH7iBNYt/rilvQT6qsv2frcFFOBUKBnRrGQ1AIHnI=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-kPAmhH4D4UN/DyWkGyB1Sxs7tQyVDV150swtUfTSJJ8=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-V1DjV5FIfpwmhLHgE+6Sv/E95t+50ilGiAk6J5mqNFA=",
@@ -237,14 +238,14 @@
       "mscorlib.wasm": "sha256-fLbZiSHBNdpHoh4EgRqMaNP5NQyIK5TEj6AXFLqo8m8=",
       "netstandard.wasm": "sha256-d4xbAE8qrKq5euUoZHPO+jkYPjlCYBzUew45MKsYKic=",
       "System.Private.CoreLib.wasm": "sha256-8yi6NcX1lkNQgV4WKjnMBYIZyKh4P+OXnXVQmgxGZD4=",
-      "InstafoodApp.BusinessLogic.wasm": "sha256-yQ8JUQAgmTP4BZJqZTXkLLEjWmmOABQ9XKdNq1HdTms=",
-      "InstafoodApp.DataAccess.wasm": "sha256-KCStaWJyHF+mbqu/iM+GLqKiJ4+hFdTxRt1xoNzASQM=",
-      "InstafoodApp.Web.Client.wasm": "sha256-BR+Ix0zeiUUwl2PE5weKuxiNTz5lm5+WUR3VdDm1KbM="
+      "InstafoodApp.BusinessLogic.wasm": "sha256-Q7v7fa7eddBpwdT/+XAfk7LGTDDkWP+1aqgE+l5+ukc=",
+      "InstafoodApp.DataAccess.wasm": "sha256-224QR/nM+pEu2SEIDInP7Y2fPZJoOIBujM2NaStuTrM=",
+      "InstafoodApp.Web.Client.wasm": "sha256-bpKxPbpuoGWtYFTTwbxrY9x5zC9v/FQIehkKu3/W2b8="
     },
     "pdb": {
-      "InstafoodApp.BusinessLogic.pdb": "sha256-OzuE4lkmSiBQvqwzOqoutfRrhoR7BI9WIHTqudZl8XA=",
-      "InstafoodApp.DataAccess.pdb": "sha256-f0vdOg3F2rh7hpNUv8xePylnAG77EVUEtXeNiZTo/YY=",
-      "InstafoodApp.Web.Client.pdb": "sha256-O8YvTkNiy1d+W4rq2bRTj5rmtKl2wTl105Lmoxy6NEg="
+      "InstafoodApp.BusinessLogic.pdb": "sha256-JZnKNS9MFiWzKphpeHtiJxe3fwkd+hj381G+9FN5m+o=",
+      "InstafoodApp.DataAccess.pdb": "sha256-Rt33JEuIIvpBrTnjGsHMGlJFub5Oz1J7i8subp7U+E0=",
+      "InstafoodApp.Web.Client.pdb": "sha256-1lPHASMLrQDEjOz62eNIRsspPQRJHlsLaVT6xTtdHWI="
     }
   },
   "cacheBootResources": true,

@@ -173,7 +173,7 @@ namespace InstafoodApp.DataAccess.Migrations
                         new
                         {
                             OrderStatusId = 5,
-                            Status = "Out of Delivery"
+                            Status = "Out for Delivery"
                         },
                         new
                         {
@@ -190,6 +190,11 @@ namespace InstafoodApp.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
+                    b.Property<bool>("IsAvailable")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
                     b.Property<string>("ProductDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -201,8 +206,7 @@ namespace InstafoodApp.DataAccess.Migrations
                     b.Property<string>("ProductPicture")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float?>("UnitPrice")
-                        .IsRequired()
+                    b.Property<float>("UnitPrice")
                         .HasColumnType("real");
 
                     b.HasKey("ProductId");

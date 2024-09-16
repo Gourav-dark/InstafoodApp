@@ -12,3 +12,4 @@ C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.pdb
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.genruntimeconfig.cache
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\ref\InstafoodApp.DataAccess.dll
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\obj\Debug\net8.0\InstafoodApp.DataAccess.sourcelink.json

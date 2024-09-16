@@ -1,0 +1,28 @@
+﻿@page "/ordercon"
+@rendermode InteractiveServer
+
+<Modal @ref="modal" Title="Order Confirmation">
+    <BodyTemplate>
+        <div class="modal-body">
+            <h5 class="text-success">Order Placed Successfully!</h5>
+            <p><strong>Order Id:</strong> 0000000</p>
+            <p><strong>Order Time:</strong> @DateTime.Now.ToString("f")</p>
+        </div>
+    </BodyTemplate>
+</Modal>
+
+<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Show Modal</Button>
+
+@code {
+    private Modal modal = default!;
+
+    private async Task OnShowModalClick()
+    {
+        await modal.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await modal.HideAsync();
+    }
+}

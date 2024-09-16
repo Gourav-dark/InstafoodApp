@@ -6,8 +6,8 @@
 @inject IOrderService _orderService
 
 <PageTitle>Delivery-Address</PageTitle>
-<div class="px-2 w-100">
-    <div class="col-lg-6 offset-lg-3 pt-4 pb-4 border rounded shadow-sm">
+<div class="mt-5 px-2 w-100">
+    <div class="col-lg-6 offset-lg-3 p-2 px-4 border rounded shadow-sm">
         <EditForm Model="@deliveryModel" OnValidSubmit="AddressUpdate" FormName="DeliveryForm">
             <DataAnnotationsValidator />
             <div class="mb-3 text-center">
@@ -63,7 +63,16 @@
         </EditForm>
     </div>
 </div>
-
+@*Order Confirmation Modal*@
+<Modal @ref="orderConfirmationModal" Title="Order Confirmation">
+    <BodyTemplate>
+        <div class="modal-body">
+            <h5 class="text-success">Order Placed Successfully!</h5>
+            <p><strong>Order Id:</strong>@OrderConfirm.OrderId</p>
+            <p><strong>Order Time:</strong>@OrderConfirm.OrderTime.ToString("hh:mm tt") @OrderConfirm.OrderDate</p>
+        </div>
+    </BodyTemplate>
+</Modal>
 @code {
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
@@ -76,26 +85,6 @@
 
     DeliveryAddressDTO deliveryModel { get; set; } = new DeliveryAddressDTO();
     private string? message;
-    private async Task AddressUpdate()
-    {
-        if (Id.Equals(UserId))
-        {
-            // Your update logic her
-            deliveryModel.CustomerId = Id;
-            if (IsAddress)
-            {
-                _addressService.Update(deliveryModel);
-            }
-            else
-            {
-                _addressService.Set(deliveryModel);
-            }
-            //Order Code
-            await _orderService.PlaceOrder(UserId);
-            _nav.NavigateTo($"/orders/{Id}");
-        }
-        return;
-    }
     protected override async Task OnInitializedAsync()
     {
         var authState = await authenticationStateTask;
@@ -115,5 +104,34 @@
             deliveryModel.PostalCode = obj.PostalCode;
             IsAddress = true;
         }
+    }
+    private async Task AddressUpdate()
+    {
+        if (Id.Equals(UserId))
+        {
+            // Your update logic her
+            deliveryModel.CustomerId = Id;
+            if (IsAddress)
+            {
+                _addressService.Update(deliveryModel);
+            }
+            else
+            {
+                _addressService.Set(deliveryModel);
+            }
+            //Order Code
+            OrderConfirm = await _orderService.PlaceOrder(UserId);
+            await orderConfirmationModal.ShowAsync();
+        }
+        return;
+    }
+    //Order Confirmation
+    private Order OrderConfirm = new();
+    private Modal orderConfirmationModal = default!;
+
+    private async Task OnHideModalClick()
+    {
+        await orderConfirmationModal.HideAsync();
+        _nav.NavigateTo($"/orders/{Id}");
     }
 }

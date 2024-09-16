@@ -22,7 +22,29 @@
             <div class="border rounded p-2">
                 <div class="d-flex justify-content-between align-items-center bg-secondary text-white rounded p-2">
                     <span class="">Order ID: @item.OrderId</span>
-                    <span class="badge bg-warning text-dark px-2 border rounded">@item.OrderStatus.Status</span>
+                    @{
+                        var badgeClass = "bg-warning"; // Default class
+
+                        switch (item.OrderStatus.Status)
+                        {
+                            case "Accepted and Preparing":
+                                badgeClass = "bg-primary";
+                                break;
+                            case "Out for Delivery":
+                                badgeClass = "bg-info";
+                                break;
+                            case "Delivered":
+                                badgeClass = "bg-success";
+                                break;
+                            case "Declined":
+                                badgeClass = "bg-danger";
+                                break;
+                            case "Cancelled":
+                                badgeClass = "bg-danger";
+                                break;
+                        }
+                    }
+                    <span class="@badgeClass text-dark px-2 border rounded">@item.OrderStatus.Status</span>
                 </div>
                 <div class="mt-2 px-3">
                     <p class="small mb-1"><strong>Order Time:</strong> @item.OrderTime.ToString("hh:mm tt") @item.OrderDate</p>
@@ -33,7 +55,8 @@
                 </div>
                 @if (!item.OrderStatus.Status.Equals("Cancelled") &&
                !item.OrderStatus.Status.Equals("Out for Delivery") &&
-               !item.OrderStatus.Status.Equals("Declined"))
+               !item.OrderStatus.Status.Equals("Declined") &&
+               !item.OrderStatus.Status.Equals("Delivered"))
                 {
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-danger py-1" @onclick="() => cancelOrder(item.OrderId)">Cancel Order</button>
@@ -53,10 +76,6 @@
     protected override async Task OnInitializedAsync()
     {
         items = await _orderService.GetOrderByUserId(Id);
-        if(items != null)
-        {
-            items = items.OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
-        }
     }
 
     private async Task cancelOrder(string orderId)

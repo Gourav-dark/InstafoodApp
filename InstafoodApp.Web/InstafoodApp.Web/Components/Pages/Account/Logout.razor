@@ -1,9 +1,18 @@
-﻿@page "/logout"
-@inject NavigationManager _nav
-@attribute [Authorize]
-
-<h3>Logout</h3>
-<p>Logout Success</p>
+﻿@inject NavigationManager _nav
+@page "/logout"
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h3 class="card-title text-success">Logout Successful</h3>
+                    <p class="card-text">You have been successfully logged out.</p>
+                    <a href="/" class="btn btn-primary mt-3">Go to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
     [CascadingParameter]
@@ -14,7 +23,7 @@
         if (_httpContext.User.Identity.IsAuthenticated)
         {
             await _httpContext.SignOutAsync();
-            _nav.NavigateTo("/");
+            _nav.NavigateTo("/logout", true);
         }
     }
 }

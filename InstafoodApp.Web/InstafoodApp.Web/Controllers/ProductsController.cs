@@ -20,7 +20,7 @@ namespace InstafoodApp.Web.Controllers
         {
             try
             {
-                IEnumerable<Product> objs = await _unitOfWork.product.GetAllAsync();
+                IEnumerable<Product> objs = (await _unitOfWork.product.GetAllAsync()).OrderBy(x=>x.ProductName);
                 if (objs.Count() > 0)
                 {
                     return Ok(objs);
@@ -39,7 +39,7 @@ namespace InstafoodApp.Web.Controllers
             {
                 return BadRequest("Filter parameter is required.");
             }
-            var products = await _unitOfWork.product.GetAllAsync(x => x.ProductName.ToLower().Contains(filter.ToLower()));
+            var products = (await _unitOfWork.product.GetAllAsync(x => x.ProductName.ToLower().Contains(filter.ToLower()))).OrderBy(x=>x.ProductName);
             if (products.Count() > 0)
             {
                 return Ok(products);
@@ -137,6 +137,19 @@ namespace InstafoodApp.Web.Controllers
                 await _unitOfWork.product.RemoveAsync(existProduct);
                 await _unitOfWork.Save();
                 return Ok(new { message = "Product is Removed." });
+            }
+            return BadRequest();
+        }
+        [HttpDelete("isAvailable/{id}")]
+        public async Task<IActionResult> isAvailable(int id)
+        {
+            Product existProduct = await _unitOfWork.product.GetAsync(x => x.ProductId == id);
+            if (existProduct != null)
+            {
+                existProduct.IsAvailable=!existProduct.IsAvailable;
+                await _unitOfWork.product.Update(existProduct);
+                await _unitOfWork.Save();
+                return Ok("Product Available is Updated");
             }
             return BadRequest();
         }

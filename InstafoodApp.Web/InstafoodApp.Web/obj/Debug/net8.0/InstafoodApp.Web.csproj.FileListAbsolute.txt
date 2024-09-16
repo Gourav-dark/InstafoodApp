@@ -165,3 +165,5 @@ C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web\obj
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web\obj\Debug\net8.0\InstafoodApp.Web.genruntimeconfig.cache
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web\obj\Debug\net8.0\ref\InstafoodApp.Web.dll
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web\obj\Debug\net8.0\InstafoodApp.Web.sourcelink.json
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web\bin\Debug\net8.0\BlazorBootstrap.dll

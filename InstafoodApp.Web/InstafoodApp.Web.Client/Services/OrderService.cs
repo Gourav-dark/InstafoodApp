@@ -114,14 +114,14 @@ namespace InstafoodApp.Web.Client.Services
             }
         }
 
-        public async Task<string> PlaceOrder(string customerId)
+        public async Task<Order> PlaceOrder(string customerId)
         {
             
             var response = await _httpClient.GetAsync($"/api/orders/placeOrder/{customerId}");
 
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.Content.ReadAsStringAsync();
+                var result = await response.Content.ReadFromJsonAsync<Order>();
                 return result;
             }
             else

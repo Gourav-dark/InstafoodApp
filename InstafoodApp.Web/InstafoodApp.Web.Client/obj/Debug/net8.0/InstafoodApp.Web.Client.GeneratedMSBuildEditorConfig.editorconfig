@@ -58,8 +58,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEhlYWRlckNvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Shared/NewComponent.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5ld0NvbXBvbmVudC5yYXpvcg==
+[C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/Shared/OrderConfirmationComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE9yZGVyQ29uZmlybWF0aW9uQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GS_Practice/BlazorProjects/InstafoodApp/InstafoodApp.Web/InstafoodApp.Web.Client/_Imports.razor]

@@ -13,7 +13,7 @@
             <option value="">All</option>
             <option value="Placed">Placed</option>
             <option value="Accepted and Preparing">Accepted and Preparing</option>
-            <option value="Out of Delivery">Out of Delivery</option>
+            <option value="Out for Delivery">Out for Delivery</option>
             <option value="Delivered">Delivered</option>
             <option value="Declined">Declined</option>
             <option value="Cancelled">Cancelled</option>
@@ -34,7 +34,29 @@
             <div class="border rounded p-2 mb-0">
                 <div class="d-flex justify-content-between align-items-center bg-secondary text-white rounded p-2">
                     <span class="">Order ID: @item.OrderId</span>
-                    <span class="badge bg-warning text-dark px-2 border rounded">@item.OrderStatus.Status</span>
+                    @{
+                        var badgeClass = "bg-warning"; // Default class
+
+                        switch (item.OrderStatus.Status)
+                        {
+                            case "Accepted and Preparing":
+                                badgeClass = "bg-primary";
+                                break;
+                            case "Out for Delivery":
+                                badgeClass = "bg-info";
+                                break;
+                            case "Delivered":
+                                badgeClass = "bg-success";
+                                break;
+                            case "Declined":
+                                badgeClass = "bg-danger";
+                                break;
+                            case "Cancelled":
+                                badgeClass = "bg-danger";
+                                break;
+                        }
+                    }
+                    <span class="@badgeClass text-dark px-2 border rounded">@item.OrderStatus.Status</span>
                 </div>
                 <div class="mt-2 px-3">
                     <div class="d-flex justify-content-between align-items-center">
@@ -49,15 +71,18 @@
                 <div class="d-flex justify-content-end px-4 pt-2">
                     <p class="small"><strong class="pe-2">Total Cost  :</strong> @item.TotalCost.ToString("F2")</p>
                 </div>
-                <div class="mt-1 d-flex justify-content-end">
-                    <select @onchange="(e) => ChangeOrderStatus(item.OrderId, e.Value.ToString())" class="form-select form-select-sm">
-                        <option value="Placed" selected="@(item.OrderStatus.Status == "Placed" ? "selected" : null)">Placed</option>
-                        <option value="Accepted and Preparing" selected="@(item.OrderStatus.Status == "Accepted and Preparing" ? "selected" : null)">Accepted and Preparing</option>
-                        <option value="Out of Delivery" selected="@(item.OrderStatus.Status == "Out of Delivery" ? "selected" : null)">Out of Delivery</option>
-                        <option value="Delivered" selected="@(item.OrderStatus.Status == "Delivered" ? "selected" : null)">Delivered</option>
-                        <option value="Declined" selected="@(item.OrderStatus.Status == "Declined" ? "selected" : null)">Declined</option>
-                    </select>
-                </div>
+                @if (!item.OrderStatus.Status.Equals("Cancelled") && !item.OrderStatus.Status.Equals("Declined") && !item.OrderStatus.Status.Equals("Delivered"))
+                {
+                    <div class="mt-1 mx-2 d-flex flex-column flex-md-row justify-content-end align-items-center">
+                        <select @onchange="(e) => ChangeOrderStatus(item.OrderId, e.Value.ToString())" class="form-select form-select-sm col-6">
+                            <option value="" selected="@(item.OrderStatus.Status == "Placed" ? "selected" : null)" disabled>Status Options</option>
+                            <option value="Accepted and Preparing" selected="@(item.OrderStatus.Status == "Accepted and Preparing" ? "selected" : null)">Accepted and Preparing</option>
+                            <option value="Out for Delivery" selected="@(item.OrderStatus.Status == "Out for Delivery" ? "selected" : null)">Out for Delivery</option>
+                            <option value="Delivered" selected="@(item.OrderStatus.Status == "Delivered" ? "selected" : null)">Delivered</option>
+                            <option value="Declined" selected="@(item.OrderStatus.Status == "Declined" ? "selected" : null)">Declined</option>
+                        </select>
+                    </div>
+                }
             </div>
         }
     }
@@ -70,7 +95,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        items = (await _orderService.GetAllOrder()).OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
+        items = await _orderService.GetAllOrder();
         filteredItems = items;
     }
 
@@ -82,7 +107,7 @@
 
     private async Task RefreshOrders()
     {
-        items = (await _orderService.GetAllOrder()).OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
+        items = await _orderService.GetAllOrder();
         FilterOrders(null);
     }
 

@@ -38,15 +38,17 @@ namespace InstafoodApp.DataAccess.Data
             modelBuilder.Entity<User>().Property(x => x.Email).IsUnicode(true);
             modelBuilder.Entity<User>().Property(x => x.Role).HasDefaultValue("Customer");
 
+
             modelBuilder.Entity<OrderStatus>().HasData(
                 new OrderStatus { OrderStatusId = 1, Status = "Placed" },
                 new OrderStatus { OrderStatusId = 2, Status = "Accepted and Preparing" },
                 new OrderStatus { OrderStatusId = 3, Status = "Declined" },
                 new OrderStatus { OrderStatusId = 4, Status = "Cancelled" },
-                new OrderStatus { OrderStatusId = 5, Status = "Out of Delivery" },
+                new OrderStatus { OrderStatusId = 5, Status = "Out for Delivery" },
                 new OrderStatus { OrderStatusId = 6, Status = "Delivered" }
                 );
             modelBuilder.Entity<Order>().Property(x => x.OrderStatusId).HasDefaultValue(1).IsRequired();
+            modelBuilder.Entity<Product>() .Property(x=>x.IsAvailable).HasDefaultValue(true).IsRequired();
         }
         public class CustomIdValueGenerator : ValueGenerator<string>
         {

@@ -4,7 +4,7 @@ namespace InstafoodApp.Web.Client.Services
 {
     public interface IOrderService
     {
-        Task<string> PlaceOrder(string userID);
+        Task<Order> PlaceOrder(string userID);
         Task<IEnumerable<Order>> GetOrderByUserId(string userID);
         Task<IEnumerable<Order>> GetAllOrder();
         Task<Order> GetOrderById(string orderId);

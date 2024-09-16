@@ -18,7 +18,7 @@ namespace InstafoodApp.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var orders = await _unitOfWork.order.GetAllAsync();
+            var orders = (await _unitOfWork.order.GetAllAsync()).OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
             if (orders.Count() > 0)
             {
                 foreach (Order order in orders)
@@ -38,7 +38,7 @@ namespace InstafoodApp.Web.Controllers
                 return BadRequest("Filter parameter is required.");
             }
             OrderStatus status = await _unitOfWork.orderStatus.GetAsync(x => x.Status.ToLower() == type.ToLower());
-            var orders = await _unitOfWork.order.GetAllAsync(x => x.OrderStatusId == status.OrderStatusId);
+            var orders = (await _unitOfWork.order.GetAllAsync(x => x.OrderStatusId == status.OrderStatusId)).OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
             if (orders.Count() > 0)
             {
                 foreach (Order order in orders)
@@ -70,7 +70,7 @@ namespace InstafoodApp.Web.Controllers
         public async Task<IActionResult> GetByCustomerId(string customerId)
         {
 
-            var orders = await _unitOfWork.order.GetAllAsync(x => x.CustomerId == customerId);
+            var orders = (await _unitOfWork.order.GetAllAsync(x => x.CustomerId == customerId)).OrderByDescending(o => o.OrderDate).ThenByDescending(o => o.OrderTime);
             if (orders.Count() > 0)
             {
                 foreach (Order order in orders)
@@ -119,7 +119,7 @@ namespace InstafoodApp.Web.Controllers
                 }
                 await _unitOfWork.cartItem.RemoveRangeAsync(cartItems);
                 await _unitOfWork.Save();
-                return Ok("Ordered successfully");
+                return Ok(newOrder);
             }
             catch (Exception ex)
             {
@@ -141,19 +141,5 @@ namespace InstafoodApp.Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        //[HttpPut("cancel/{id}")]
-        //public async Task<IActionResult> Put(string id)
-        //{
-        //    try
-        //    {
-        //        await _unitOfWork.order.UpdateStatus(id, "Cancelled");
-        //        await _unitOfWork.Save();
-        //        return Ok("Order Cancelled.");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
     }
 }

@@ -41,6 +41,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddAuthorization();
 builder.Services.AddCascadingAuthenticationState();
 
+//Blazor Bootstrap
+builder.Services.AddBlazorBootstrap();
+
 // Interface and Its Reference to Repository
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

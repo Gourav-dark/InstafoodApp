@@ -1189,3 +1189,9 @@ C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Cli
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Authorization.dll
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Authorization.wasm
 C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\obj\Debug\net8.0\compressed\zia55jt9b7.gz
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\obj\Debug\net8.0\InstafoodApp.Web.Client.sourcelink.json
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\bin\Debug\net8.0\wwwroot\_framework\BlazorBootstrap.wasm
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\bin\Debug\net8.0\wwwroot\_framework\BlazorBootstrap.wasm.gz
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\bin\Debug\net8.0\BlazorBootstrap.dll
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\obj\Debug\net8.0\webcil\BlazorBootstrap.wasm
+C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.Web\InstafoodApp.Web.Client\obj\Debug\net8.0\compressed\yn76pgjh2m.gz

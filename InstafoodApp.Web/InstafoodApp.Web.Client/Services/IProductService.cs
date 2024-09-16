@@ -7,5 +7,7 @@ namespace InstafoodApp.Web.Client.Services
     {
         Task<IEnumerable<Product>> GetAll();
         Task<string> Add(ProductDTO obj);
+        Task<string> Delete(int productId);
+        Task<string> IsAvailable(int productId);
     }
 }
