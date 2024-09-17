@@ -43,7 +43,6 @@ namespace InstafoodApp.Web.Controllers
             {
                 foreach (Order order in orders)
                 {
-                    //order.OrderStatus = await _unitOfWork.orderStatus.GetAsync(x => x.OrderStatusId == order.OrderStatusId);
                     order.Customer = await _unitOfWork.user.GetAsync(x => x.UserId == order.CustomerId);
                 }
                 return Ok(orders);
@@ -96,16 +95,13 @@ namespace InstafoodApp.Web.Controllers
                         Product product=await _unitOfWork.product.GetAsync(x=>x.ProductId == cartItem.ProductId);
                         totalCost += cartItem.Quantity * product.UnitPrice;
                     }
-                }
-                Order newOrder=new Order() 
-                {
-                    CustomerId = customerId,
-                    TotalCost = totalCost,
-                };
-                await _unitOfWork.order.AddAsync(newOrder);
-                await _unitOfWork.Save();
-                if (cartItems.Count() > 0)
-                {
+                    Order newOrder=new Order() 
+                    {
+                        CustomerId = customerId,
+                        TotalCost = totalCost,
+                    };
+                    await _unitOfWork.order.AddAsync(newOrder);
+                    await _unitOfWork.Save();
                     foreach (var cartItem in cartItems) 
                     {
                         OrderDetail detail = new OrderDetail()
@@ -116,10 +112,11 @@ namespace InstafoodApp.Web.Controllers
                         };
                         await _unitOfWork.orderDetail.AddAsync(detail);
                     }
+                    await _unitOfWork.cartItem.RemoveRangeAsync(cartItems);
+                    await _unitOfWork.Save();
+                    return Ok(newOrder);
                 }
-                await _unitOfWork.cartItem.RemoveRangeAsync(cartItems);
-                await _unitOfWork.Save();
-                return Ok(newOrder);
+                return BadRequest();
             }
             catch (Exception ex)
             {

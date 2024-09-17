@@ -33,8 +33,8 @@
                     <div class="card h-100">
                         <img class="card-img-top" src="@product.ProductPicture" alt="Card image cap" style="height:16rem;">
                         <div class="card-body pb-1">
-                            <h5 class="card-title text-primary">@product.ProductName</h5>
-                            <p class="card-text text-secondary mb-0" style="font-size:.7rem">@product.ProductDescription</p>
+                            <h6 class="card-title text-primary">@product.ProductName</h6>
+                            <p class="card-text text-secondary mb-0 text-truncate" style="font-size: 0.7rem;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@product.ProductDescription">@product.ProductDescription</p>
                             <p class="card-text text-danger text-end">Rs. @((product.UnitPrice).ToString("F2"))</p>
                         </div>
                         <AuthorizeView Roles="Admin">
@@ -69,7 +69,11 @@
         }
         else
         {
-            <p>Loading.....</p>
+            <div class="d-flex justify-content-center align-items-center" style="height:100vh;">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         }
     </div>
 </div>

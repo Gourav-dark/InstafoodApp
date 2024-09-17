@@ -72,6 +72,9 @@
             <p><strong>Order Time:</strong>@OrderConfirm.OrderTime.ToString("hh:mm tt") @OrderConfirm.OrderDate</p>
         </div>
     </BodyTemplate>
+    <FooterTemplate>
+        <button class="btn btn-primary" @onclick="OnHideModalClick">OK</button>
+    </FooterTemplate>
 </Modal>
 @code {
     [CascadingParameter]
@@ -81,7 +84,7 @@
     private string? Name;
     private string? Email;
     private string? UserId;
-    private bool IsAddress=false;
+    private bool IsAddress = false;
 
     DeliveryAddressDTO deliveryModel { get; set; } = new DeliveryAddressDTO();
     private string? message;
@@ -93,7 +96,7 @@
         Email = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
         UserId = user.FindFirst("userId")?.Value;
         DeliveryAddress obj = await _addressService.GetById(UserId);
-        if(obj != null)
+        if (obj != null)
         {
             deliveryModel.Street = obj.Street;
             deliveryModel.LandMark = obj.LandMark;
@@ -105,11 +108,12 @@
             IsAddress = true;
         }
     }
+
     private async Task AddressUpdate()
     {
         if (Id.Equals(UserId))
         {
-            // Your update logic her
+            // Your update logic here
             deliveryModel.CustomerId = Id;
             if (IsAddress)
             {
@@ -119,13 +123,14 @@
             {
                 _addressService.Set(deliveryModel);
             }
-            //Order Code
+            // Order Code
             OrderConfirm = await _orderService.PlaceOrder(UserId);
             await orderConfirmationModal.ShowAsync();
         }
         return;
     }
-    //Order Confirmation
+
+    // Order Confirmation
     private Order OrderConfirm = new();
     private Modal orderConfirmationModal = default!;
 
