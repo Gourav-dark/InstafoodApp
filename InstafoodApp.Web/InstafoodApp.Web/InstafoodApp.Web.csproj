@@ -7,10 +7,35 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="wwwroot\Reports\ProductRPT.rdlc" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\..\InstafoodApp.BusinessLogic\InstafoodApp.BusinessLogic.csproj" />
 		<ProjectReference Include="..\InstafoodApp.Web.Client\InstafoodApp.Web.Client.csproj" />
+		<PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\Reports\ProductRPT.rdlc" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="DataSets\dsProduct.Designer.cs">
+	    <DependentUpon>dsProduct.xsd</DependentUpon>
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="DataSets\dsProduct.xsd">
+	    <SubType>Designer</SubType>
+	    <LastGenOutput>dsProduct.Designer.cs</LastGenOutput>
+	    <Generator>MSDataSetGenerator</Generator>
+	  </None>
 	</ItemGroup>
 
 </Project>

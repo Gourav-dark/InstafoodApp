@@ -1,27 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj": {}
+    "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj": {}
   },
   "projects": {
-    "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj": {
+    "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj",
+        "projectUniqueName": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj",
         "projectName": "InstafoodApp.BusinessLogic",
-        "projectPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\2270340\\.nuget\\packages\\",
-        "outputPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\obj\\",
+        "projectPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\GOURAV SHARMA\\.nuget\\packages\\",
+        "outputPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\2270340\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GOURAV SHARMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj": {
-                "projectPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj"
+              "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj": {
+                "projectPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj"
               }
             }
           }
@@ -65,28 +65,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj": {
+    "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj",
+        "projectUniqueName": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj",
         "projectName": "InstafoodApp.DataAccess",
-        "projectPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\2270340\\.nuget\\packages\\",
-        "outputPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.DataAccess\\obj\\",
+        "projectPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\GOURAV SHARMA\\.nuget\\packages\\",
+        "outputPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\2270340\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GOURAV SHARMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -138,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

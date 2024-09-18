@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InstafoodApp.DataAccess
-build_property.ProjectDir = C:\GS_Practice\BlazorProjects\InstafoodApp\InstafoodApp.DataAccess\
+build_property.ProjectDir = D:\CV_Projects\InstafoodApp\InstafoodApp.DataAccess\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

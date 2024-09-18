@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\obj\\Debug\\net8.0\\compressed\\w99jphqud3.gz",
+      "Id": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\obj\\Debug\\net8.0\\compressed\\woyrm5bmxy.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\Images\\empty-cart.png",
+      "Id": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\Images\\empty-cart.png",
       "PackagePath": "staticwebassets\\Images\\empty-cart.png"
     },
     {
-      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\Images\\profilelogin.png",
+      "Id": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\Images\\profilelogin.png",
       "PackagePath": "staticwebassets\\Images\\profilelogin.png"
     },
     {
-      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\appsettings.Development.json",
+      "Id": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\appsettings.Development.json",
       "PackagePath": "staticwebassets\\appsettings.Development.json"
     },
     {
-      "Id": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\appsettings.json",
+      "Id": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\wwwroot\\appsettings.json",
       "PackagePath": "staticwebassets\\appsettings.json"
     },
     {

@@ -828,13 +828,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.7": {
+      "Microsoft.NET.ILLink.Tasks/8.0.8": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.7": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.8": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -2164,13 +2164,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.7": {
+      "Microsoft.NET.ILLink.Tasks/8.0.8": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.7": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.8": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -3882,10 +3882,10 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.7": {
-      "sha512": "iI52ptEKby2ymQ6B7h4TWbFmm85T4VvLgc/HvS45Yr3lgi4IIFbQtjON3bQbX/Vc94jXNSLvrDOp5Kh7SJyFYQ==",
+    "Microsoft.NET.ILLink.Tasks/8.0.8": {
+      "sha512": "P8wR6MUWwYXIjPJuBaZgo5zlI/GWI6QEAo6NyVIbPefa9CCkohYu7dP2rD/mrqnjEqfRHyl+h9VZrDoGpELqYg==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.7",
+      "path": "microsoft.net.illink.tasks/8.0.8",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -3899,7 +3899,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.7.nupkg.sha512",
+        "microsoft.net.illink.tasks.8.0.8.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -3933,10 +3933,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.7": {
-      "sha512": "HI/nGJnpSn8370os+GuviOnCM1RsXB3PQSX6u9RjApncJ5jZZf2qdFRQZM9tUjdDJ/ADmrzBxlV/hKp3CWYMDA==",
+    "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.8": {
+      "sha512": "z2UxqxjssvxlcQ68KZorgQDITdV2u5H6CWOGhs3kiv+qqDtokhDpcK660TUMrX+FTDdRKie0l7EeZEdej26Ycw==",
       "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/8.0.7",
+      "path": "microsoft.net.sdk.webassembly.pack/8.0.8",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -3964,7 +3964,7 @@
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.props",
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
         "build/Wasm.web.config",
-        "microsoft.net.sdk.webassembly.pack.8.0.7.nupkg.sha512",
+        "microsoft.net.sdk.webassembly.pack.8.0.8.nupkg.sha512",
         "microsoft.net.sdk.webassembly.pack.nuspec",
         "tools/net472/Microsoft.Bcl.AsyncInterfaces.dll",
         "tools/net472/Microsoft.Build.dll",
@@ -5115,31 +5115,31 @@
       "InstafoodApp.BusinessLogic >= 1.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 8.0.8",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.8",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.7",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.7"
+      "Microsoft.NET.ILLink.Tasks >= 8.0.8",
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.8"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\2270340\\.nuget\\packages\\": {}
+    "C:\\Users\\GOURAV SHARMA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\InstafoodApp.Web.Client.csproj",
+      "projectUniqueName": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\InstafoodApp.Web.Client.csproj",
       "projectName": "InstafoodApp.Web.Client",
-      "projectPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\InstafoodApp.Web.Client.csproj",
-      "packagesPath": "C:\\Users\\2270340\\.nuget\\packages\\",
-      "outputPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\obj\\",
+      "projectPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\InstafoodApp.Web.Client.csproj",
+      "packagesPath": "C:\\Users\\GOURAV SHARMA\\.nuget\\packages\\",
+      "outputPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web.Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\2270340\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\GOURAV SHARMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -5147,8 +5147,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj": {
-              "projectPath": "C:\\GS_Practice\\BlazorProjects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj"
+            "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj": {
+              "projectPath": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.BusinessLogic\\InstafoodApp.BusinessLogic.csproj"
             }
           }
         }
@@ -5183,13 +5183,13 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.7, )",
+            "version": "[8.0.8, )",
             "autoReferenced": true
           },
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[8.0.7, )",
+            "version": "[8.0.8, )",
             "autoReferenced": true
           }
         },
@@ -5207,7 +5207,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[8.0.7, 8.0.7]"
+            "version": "[8.0.8, 8.0.8]"
           }
         ],
         "frameworkReferences": {
@@ -5215,7 +5215,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CV_Projects\\InstafoodApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1312B433-A319-4D78-935F-10FFFB6BFB31}|InstafoodApp.Web\\InstafoodApp.Web\\InstafoodApp.Web.csproj|d:\\cv_projects\\instafoodapp\\instafoodapp.web\\instafoodapp.web\\wwwroot\\reports\\productrpt.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1312B433-A319-4D78-935F-10FFFB6BFB31}|InstafoodApp.Web\\InstafoodApp.Web\\InstafoodApp.Web.csproj|solutionrelative:instafoodapp.web\\instafoodapp.web\\wwwroot\\reports\\productrpt.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD25D9D1-4811-47D6-BEB8-2CD8D54D8CE7}|InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj|d:\\cv_projects\\instafoodapp\\instafoodapp.dataaccess\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD25D9D1-4811-47D6-BEB8-2CD8D54D8CE7}|InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj|solutionrelative:instafoodapp.dataaccess\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD25D9D1-4811-47D6-BEB8-2CD8D54D8CE7}|InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj|d:\\cv_projects\\instafoodapp\\instafoodapp.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD25D9D1-4811-47D6-BEB8-2CD8D54D8CE7}|InstafoodApp.DataAccess\\InstafoodApp.DataAccess.csproj|solutionrelative:instafoodapp.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1312B433-A319-4D78-935F-10FFFB6BFB31}|InstafoodApp.Web\\InstafoodApp.Web\\InstafoodApp.Web.csproj|d:\\cv_projects\\instafoodapp\\instafoodapp.web\\instafoodapp.web\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1312B433-A319-4D78-935F-10FFFB6BFB31}|InstafoodApp.Web\\InstafoodApp.Web\\InstafoodApp.Web.csproj|solutionrelative:instafoodapp.web\\instafoodapp.web\\controllers\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductRPT.rdlc [Design]",
+              "DocumentMoniker": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web\\wwwroot\\Reports\\ProductRPT.rdlc",
+              "RelativeDocumentMoniker": "InstafoodApp.Web\\InstafoodApp.Web\\wwwroot\\Reports\\ProductRPT.rdlc",
+              "ToolTip": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web\\wwwroot\\Reports\\ProductRPT.rdlc [Design]",
+              "RelativeToolTip": "InstafoodApp.Web\\InstafoodApp.Web\\wwwroot\\Reports\\ProductRPT.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-09-18T17:36:32.83Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "InstafoodApp.DataAccess\\Models\\Product.cs",
+              "ToolTip": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\Models\\Product.cs",
+              "RelativeToolTip": "InstafoodApp.DataAccess\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T17:30:41.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "InstafoodApp.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "InstafoodApp.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T17:30:08.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportsController.cs",
+              "DocumentMoniker": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web\\Controllers\\ReportsController.cs",
+              "RelativeDocumentMoniker": "InstafoodApp.Web\\InstafoodApp.Web\\Controllers\\ReportsController.cs",
+              "ToolTip": "D:\\CV_Projects\\InstafoodApp\\InstafoodApp.Web\\InstafoodApp.Web\\Controllers\\ReportsController.cs",
+              "RelativeToolTip": "InstafoodApp.Web\\InstafoodApp.Web\\Controllers\\ReportsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T17:24:18.019Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\bin\Debug\net8.0-windows\InstafoodApp.Report.exe
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\bin\Debug\net8.0-windows\InstafoodApp.Report.deps.json
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\bin\Debug\net8.0-windows\InstafoodApp.Report.runtimeconfig.json
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\bin\Debug\net8.0-windows\InstafoodApp.Report.dll
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\bin\Debug\net8.0-windows\InstafoodApp.Report.pdb
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.Form1.resources
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.csproj.GenerateResource.cache
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.GeneratedMSBuildEditorConfig.editorconfig
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.AssemblyInfoInputs.cache
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.AssemblyInfo.cs
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.csproj.CoreCompileInputs.cache
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.sourcelink.json
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.dll
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\refint\InstafoodApp.Report.dll
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.pdb
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\InstafoodApp.Report.genruntimeconfig.cache
+D:\CV_Projects\InstafoodApp\InstafoodApp.Report\obj\Debug\net8.0-windows\ref\InstafoodApp.Report.dll
